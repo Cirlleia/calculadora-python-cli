@@ -7,6 +7,10 @@ Original file is located at
     https://colab.research.google.com/drive/1gv-9idtzw1nf8SaWDIIW1PZfb-Vi2CXV
 """
 
+from uteis import Cores
+
+# Cores.FIM serve para as cores voltarem ao normal
+
 def somar(a, b):
     return a + b
 
@@ -22,18 +26,24 @@ def dividir(a, b):
     return a / b
 
 def calculadora():
+    # dica: print(f"{'':=^39}") faz a mesma coisa!
+    # O nome disso é "Format specifiers" ;)
     print('=======================================')
+    print(Cores.AMARELO, end="")
     print("Bem-vindo(a) à Calculadora em Python 🧮")
+    print(Cores.FIM, end="")
     print('=======================================')
 
     while True:
+        print(Cores.BRANCO)
         print("\nEscolha uma operação:")
         print("1 - Somar")
         print("2 - Subtrair")
         print("3 - Multiplicar")
         print("4 - Dividir")
         print("0 - Sair")
-
+        print(Cores.FIM)
+		
         escolha = input("Digite a opção: ")
 
         if escolha == "0":
@@ -41,7 +51,9 @@ def calculadora():
             break
 
         if escolha not in ["1", "2", "3", "4"]:
+            print(Cores.VERMELHO)
             print("Opção inválida. Tente novamente.")
+            print(Cores.FIM)
             continue
 
         try:
